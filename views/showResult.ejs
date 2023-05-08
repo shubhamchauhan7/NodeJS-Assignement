@@ -1,0 +1,18 @@
+<%-include('header')-%>
+   <div class="container mt-5">
+    <div class="row">
+        <h1>Roll Number&emsp;&emsp;::&emsp;&emsp;<%= data.studentRollNumber%></h1>
+    </div>
+    <div>
+        <h1>Name&emsp;&emsp;&emsp;&emsp;&emsp;::&emsp;&emsp;<%= data.studentName%></h1>
+    </div>
+    <div>
+        <h1>Date Of Birth&emsp;&nbsp;&nbsp;::&emsp;&emsp;<%= data.studentDob.toJSON().slice(0,10)%></h1>
+    </div>
+    <div>
+        <h1>Score&emsp;&emsp;&emsp;&emsp;&emsp;::&emsp;&emsp;<%= data.studentScore%></h1>
+    </div>
+    <form action="/find"><button class="btn btn-secondary" type="submit">Back</button></form>
+   </div>
+<%- include('footer')-%>
+

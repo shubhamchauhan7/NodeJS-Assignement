@@ -1,0 +1,33 @@
+<%-include('header')-%>
+<div class="row mt-2" style="float: right;">
+   <form action="/add-new">
+      <button class="btn btn-primary" type="submit"> Add Record </button> </a>
+   </form>
+</div>
+<div class="row mt-5" style="margin-left : 10%">
+   <h2>Total <%= data.length %> Students</h2>
+</div>
+<div class="row mt-5" style="margin-left: 11%;">
+   <table class="table table-bordered" style="width: 90%;">
+      <tr>
+         <th>Roll Number</th>
+         <th>Name </th>
+         <th>DOB</th>
+         <th>Score</th>
+         <th>Action</th>
+      </tr>
+      <%for(var i = 0; i < data.length;  i++){%>
+       <tr>
+         <td><%=data[i].studentRollNumber%></td>
+         <td><%=data[i].studentName%></td>
+         <td><%=data[i].studentDob.toJSON().slice(0,10)%></td>
+         <td><%=data[i].studentScore%></td>
+         <td> <div>
+          <a href='/edit?rollNumber=<%=data[i].studentRollNumber%>'><button class="btn btn-primary">Edit</button> </a>
+          <a href="/delete?rollNumber=<%=data[i].studentRollNumber%>"><button class="btn btn-danger">Delete</button> </a>
+      </div> </td>
+       </tr>    
+      <% } %>
+   </table>
+</div>
+<%-include('footer')-%>
